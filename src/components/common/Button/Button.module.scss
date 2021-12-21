@@ -1,0 +1,18 @@
+@import 'core';
+
+.button {
+  width: fit-content;
+  min-width: 127px;
+  display: inline-flex;
+  @include text(rem(16px), 700, $WHITE);
+  background-color: $BLUE;
+  border: 1px solid $BLUE;
+  border-radius: 8px;
+  padding: 18px 34px;
+  @include transition(background-color, color);
+  cursor: pointer;
+  &:hover {
+    background-color: transparent;
+    color: $BLUE;
+  }
+}
