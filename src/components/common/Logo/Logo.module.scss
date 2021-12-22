@@ -1,0 +1,9 @@
+@import 'core';
+
+.logo {
+  display: inline-flex;
+  height: 30px;
+  &__img {
+    fill: crimson;
+  }
+}

@@ -1,0 +1,25 @@
+@import 'core';
+
+.nav {
+  height: 120px;
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 676px;
+  }
+  &__list {
+    width: 100%;
+    @include flex(space-between, center);
+  }
+  &__button {
+    margin-left: 50px;
+    // background-color: $WHITE;
+    // color: $BLUE;
+    text-transform: uppercase;
+  }
+}
+
+.container {
+  height: 100%;
+  @include flex(space-between, center);
+}

@@ -3,7 +3,7 @@
 .button {
   width: fit-content;
   min-width: 127px;
-  display: inline-flex;
+  @include flex(center, center);
   @include text(rem(16px), 700, $WHITE);
   background-color: $BLUE;
   border: 1px solid $BLUE;
@@ -15,4 +15,16 @@
     background-color: transparent;
     color: $BLUE;
   }
+  &:hover .add {
+    fill: $BLUE;
+  }
+}
+
+.add {
+  $size: 16px;
+  width: $size;
+  height: $size;
+  fill: $WHITE;
+  margin-right: 17px;
+  @include transition(fill);
 }
