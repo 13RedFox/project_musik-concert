@@ -1,0 +1,16 @@
+@import 'core';
+
+.timer {
+  position: absolute;
+  bottom: 2%;
+  width: 100%;
+  @include text(rem(144px), 700, $WHITE);
+  line-height: 122%;
+  opacity: 0.5;
+  -webkit-text-stroke: 1px #fff;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  @include flex(space-between, center);
+}

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Button, Container, Icon } from '../../common';
+import { HomeHeaderTimer } from './components';
 import styles from './HomeHeader.module.scss';
 
 export const HomeHeader: FC = () => {
@@ -23,6 +24,7 @@ export const HomeHeader: FC = () => {
             watch video
           </button>
         </div>
+        <HomeHeaderTimer />
       </Container>
     </header>
   );
