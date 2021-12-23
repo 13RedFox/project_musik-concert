@@ -13,7 +13,7 @@ export const Button: FC<ButtonProps> = ({ children, className, leftIcon = false 
   return (
     <button className={classNames(styles.button, className)}>
       {leftIcon && <Icon name="add" className={styles.add} />}
-      {children}
+      <span className={styles.button__title}>{children}</span>
     </button>
   );
 };

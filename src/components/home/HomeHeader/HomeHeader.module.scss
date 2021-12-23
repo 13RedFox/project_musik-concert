@@ -1,0 +1,67 @@
+@import 'core';
+
+.header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #381ddb 0%, rgba(0, 0, 0, 0.2) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('../../../assets/images/hero-bg.jpg') center / cover;
+  &__wrapper_content {
+    width: 100%;
+    max-width: 970px;
+  }
+  &__title {
+    @include text(rem(72px), 700, $WHITE);
+    line-height: 122%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__colored {
+    color: #ffa3a3;
+    text-transform: capitalize;
+  }
+  &__description {
+    font-family: $SECOND_FONT;
+    @include text(rem(24px), 400, $WHITE);
+    line-height: 158%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+.container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  @include flex(space-between, center);
+  &__started {
+    background-color: $RED;
+    text-transform: capitalize;
+    border-color: $RED;
+    margin-right: 40px;
+    @include transition(color, border-color, background-color);
+    &:hover {
+      background-color: $WHITE;
+      color: $RED;
+      border-color: transparent;
+    }
+  }
+  &__video {
+    @include flex(center, center);
+    @include text(rem(20px), 600, $WHITE);
+    line-height: 140%;
+    text-transform: capitalize;
+    cursor: pointer;
+    &_icon {
+      $size: 46px;
+      width: $size;
+      height: $size;
+      fill: $WHITE;
+      margin-right: 25px;
+    }
+  }
+}

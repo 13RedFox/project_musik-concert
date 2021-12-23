@@ -1,13 +1,12 @@
 import type { NextPage } from 'next';
-import { Button } from '../src/components/common';
+import { HomeHeader } from '../src/components/home/HomeHeader';
 import { TheNavigation } from '../src/components/TheNavigation';
 
 const Home: NextPage = () => {
   return (
     <>
       <TheNavigation />
-      <h1>Musik - Concert Landing Page</h1>
-      <Button>Button</Button>
+      <HomeHeader />
     </>
   );
 };
