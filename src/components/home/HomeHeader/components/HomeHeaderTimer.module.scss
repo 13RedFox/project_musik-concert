@@ -2,13 +2,35 @@
 
 .timer {
   position: absolute;
-  bottom: 2%;
+  bottom: 6%;
   width: 100%;
-  @include text(rem(144px), 700, $WHITE);
+  @include text(rem(40px), 700, $WHITE);
   line-height: 122%;
   opacity: 0.5;
   -webkit-text-stroke: 1px #fff;
   -webkit-text-fill-color: transparent;
+  @include media($screen-iphone-plus) {
+    font-size: 40px;
+    bottom: 6%;
+  }
+  @include media($screen-tablet-small) {
+    font-size: 60px;
+    bottom: 4%;
+  }
+  @include media($screen-tablet) {
+    font-size: 80px;
+    bottom: 6%;
+  }
+  @include media($screen-tablet-large) {
+    font-size: 90px;
+    bottom: 2%;
+  }
+  @include media($screen-netbook) {
+    font-size: 110px;
+  }
+  @include media($screen-desktop-large) {
+    font-size: 144px;
+  }
 }
 
 .container {
