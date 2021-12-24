@@ -1,0 +1,58 @@
+@import 'core';
+
+.card {
+  width: 100%;
+  max-width: 370px;
+  flex-direction: column;
+  padding: 90px 120px 35px 60px;
+  border-radius: 24px;
+  @include transition(background-color, filter, color);
+  &:hover {
+    background-color: $BLUE !important;
+    filter: drop-shadow(0px 10px 30px rgba(56, 29, 219, 0.2));
+  }
+  &:hover &__icon {
+    fill: $WHITE;
+  }
+  &:hover &__title,
+  &:hover &__description {
+    color: $WHITE;
+  }
+  &__icon {
+    $size: 40px;
+    width: $size;
+    height: $size;
+    fill: $RED;
+    margin-bottom: 30px;
+    @include transition(fill);
+  }
+  &__title {
+    @include text(rem(24px), 800, $BLACK);
+    line-height: 158%;
+    text-transform: capitalize;
+    @include transition(color);
+    margin-bottom: 20px;
+  }
+  &__description {
+    @include text(rem(16px), 400, $BLACK);
+    line-height: 150%;
+    opacity: 0.7;
+    @include transition(color);
+  }
+}
+
+.orange {
+  fill: $A2;
+}
+.red {
+  fill: $RED;
+}
+.green {
+  fill: #39e6b7;
+}
+.pink {
+  fill: $A4;
+}
+.blue {
+  fill: $A7;
+}
