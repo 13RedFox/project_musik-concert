@@ -1,10 +1,28 @@
 @import 'core';
 
 .category {
-  padding-top: 240px;
+  padding-top: 60px;
+  @include media($screen-tablet-small) {
+    padding-top: 90px;
+  }
+  @include media($screen-hd) {
+    padding-top: 180px;
+  }
+  @include media($screen-fullhd) {
+    padding-top: 200px;
+  }
+  @include media($screen-retina) {
+    padding-top: 240px;
+  }
   &__title {
-    @include text(rem(34px), 700, $BLACK);
+    @include text(rem(26px), 700, $BLACK);
     line-height: 130%;
+    @include media($screen-iphone-6) {
+      font-size: rem(30px);
+    }
+    @include media($screen-iphone-plus) {
+      font-size: rem(34px);
+    }
     &_colored {
       color: $BLUE;
     }

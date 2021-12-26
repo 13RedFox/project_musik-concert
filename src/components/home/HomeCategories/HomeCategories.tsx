@@ -1,7 +1,10 @@
 import { FC } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Container } from '../../common';
 import { HomeCategoriesCard } from './components';
+import 'swiper/css';
 import styles from './HomeCategories.module.scss';
+// import { SwiperOptions } from 'swiper';
 
 const category = [
   {
@@ -41,6 +44,11 @@ const category = [
   },
 ];
 
+// const swiperParams: SwiperOptions = {
+//   slidesPerView: 5,
+//   spaceBetween: 20,
+// }
+
 export const HomeCategories: FC = () => {
   return (
     <section className={styles.category}>
@@ -50,7 +58,24 @@ export const HomeCategories: FC = () => {
         </h2>
       </Container>
       <div className={styles.category__wrapper}>
-        {[] && category.map((item) => <HomeCategoriesCard key={item.icon} categories={item} />)}
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={'auto'}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            600: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1366: { slidesPerView: 4 },
+            1920: { slidesPerView: 5 },
+          }}
+          loop>
+          {[] &&
+            category.map((item) => (
+              <SwiperSlide key={item.icon}>
+                <HomeCategoriesCard categories={item} />
+              </SwiperSlide>
+            ))}
+        </Swiper>
       </div>
     </section>
   );

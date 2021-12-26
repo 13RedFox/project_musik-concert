@@ -17,11 +17,11 @@
     text-align: center;
     margin-bottom: 20px;
     @include media($screen-tablet-small) {
-      font-size: 50px;
+      font-size: rem(50px);
       margin-bottom: 30px;
     }
     @include media($screen-hd) {
-      font-size: 72px;
+      font-size: rem(72px);
       margin-bottom: 40px;
     }
   }
@@ -36,15 +36,15 @@
     text-align: center;
     margin-bottom: 20px;
     @include media($screen-iphone-plus) {
-      font-size: 16px;
+      font-size: rem(16px);
       margin-bottom: 20px;
     }
     @include media($screen-tablet-small) {
-      font-size: 20px;
+      font-size: rem(20px);
       margin-bottom: 30px;
     }
     @include media($screen-hd) {
-      font-size: 24px;
+      font-size: rem(24px);
       margin-bottom: 40px;
     }
   }
@@ -93,13 +93,13 @@
       margin-right: 10px;
     }
     @include media($screen-iphone-plus) {
-      font-size: 16px;
+      font-size: rem(16px);
       &_icon {
         margin-right: 10px;
       }
     }
     @include media($screen-tablet-small) {
-      font-size: 20px;
+      font-size: rem(20px);
       &_icon {
         margin-right: 25px;
       }
