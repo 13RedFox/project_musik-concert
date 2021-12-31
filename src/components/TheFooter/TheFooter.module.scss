@@ -1,0 +1,48 @@
+@import 'core';
+
+.footer {
+  background-color: #222;
+  padding: 40px 0 35px;
+  &__logo {
+    margin-bottom: 55px;
+  }
+  &__nav {
+    width: 100%;
+    @include flex(space-between, center);
+    &_list,
+    &_social {
+      width: 100%;
+      @include flex(space-between, center);
+    }
+    &_list {
+      max-width: 444px;
+      &__link {
+        @include text(rem(14px), 600, $WHITE);
+        line-height: 143%;
+        text-transform: uppercase;
+        @include transition(color);
+        &:hover {
+          color: $BLUE;
+        }
+      }
+    }
+    &_social {
+      max-width: 210px;
+      &__icon {
+        $size: 30px;
+        width: $size;
+        height: $size;
+        fill: $WHITE;
+        @include transition(fill);
+        &:hover {
+          fill: $BLUE;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
