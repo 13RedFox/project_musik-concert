@@ -4,11 +4,24 @@
   background-color: #222;
   padding: 40px 0 35px;
   &__logo {
-    margin-bottom: 55px;
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    @include media($screen-tablet) {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 55px;
+    }
   }
   &__nav {
     width: 100%;
-    @include flex(space-between, center);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include media($screen-tablet) {
+      flex-direction: row;
+      @include flex(space-between, center);
+    }
     &_list,
     &_social {
       width: 100%;
@@ -16,11 +29,18 @@
     }
     &_list {
       max-width: 444px;
+      margin-bottom: 15px;
+      @include media($screen-tablet) {
+        margin-bottom: 0px;
+      }
       &__link {
-        @include text(rem(14px), 600, $WHITE);
+        @include text(rem(12px), 600, $WHITE);
         line-height: 143%;
         text-transform: uppercase;
         @include transition(color);
+        @include media($screen-tablet) {
+          font-size: rem(14px);
+        }
         &:hover {
           color: $BLUE;
         }

@@ -11,7 +11,7 @@ export const HomeHeaderTimer: FC = () => {
   let interval: NodeJS.Timer;
 
   const startTimer = () => {
-    const countdownDate = new Date('January 1 2022 00:00:00').getTime();
+    const countdownDate = new Date('January 1 2023 00:00:00').getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
