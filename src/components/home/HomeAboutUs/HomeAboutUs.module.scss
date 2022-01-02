@@ -1,0 +1,93 @@
+@import 'core';
+
+.about {
+  padding-top: 60px;
+  @include media($screen-tablet-small) {
+    padding-top: 90px;
+  }
+  @include media($screen-hd) {
+    padding-top: 180px;
+  }
+  @include media($screen-fullhd) {
+    padding-top: 200px;
+  }
+  @include media($screen-retina) {
+    padding-top: 240px;
+  }
+  &__wrapper {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    @include media($screen-tablet) {
+      flex-direction: row;
+      @include flex(center, center);
+    }
+
+    &_image {
+      border-radius: 24px;
+    }
+    &_content {
+      width: 100%;
+      max-width: 570px;
+      flex-direction: column;
+      &__title {
+        @include text(rem(24px), 600, $DARK);
+        line-height: 130%;
+        text-transform: capitalize;
+        text-align: center;
+        margin-bottom: 15px;
+        @include media($screen-tablet) {
+          text-align: left;
+        }
+        @include media($screen-tablet-large) {
+          font-size: rem(24px);
+        }
+        @include media($screen-netbook) {
+          font-size: rem(26px);
+          margin-bottom: 20px;
+        }
+        @include media($screen-desktop-medium) {
+          margin-bottom: 32px;
+          font-size: rem(34px);
+        }
+      }
+      &__description {
+        font-family: $SECOND-FONT;
+        @include text(rem(14px), 400, $DARK);
+        line-height: 150%;
+        opacity: 0.7;
+        margin-bottom: 20px;
+        @include media($screen-netbook) {
+          font-size: rem(16px);
+        }
+        @include media($screen-desktop) {
+          margin-bottom: 20px;
+        }
+        @include media($screen-desktop-medium) {
+          margin-bottom: 50px;
+        }
+        @include media($screen-desktop-large) {
+          margin-bottom: 80px;
+        }
+      }
+      &__btn {
+        text-transform: capitalize;
+        width: 100%;
+        margin: 0 auto;
+        @include media($screen-tablet) {
+          margin-left: 0;
+          margin-right: 0;
+          width: auto;
+        }
+      }
+    }
+  }
+  .wrapper__images {
+    margin-right: 0;
+    margin-bottom: 30px;
+    @include media($screen-tablet) {
+      margin-right: 70px;
+      margin-bottom: 0;
+    }
+  }
+}
