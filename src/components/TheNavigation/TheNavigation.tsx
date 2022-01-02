@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { Button, Container } from '../common';
 import { Logo } from '../common/Logo';
 import styles from './TheNavigation.module.scss';
@@ -11,8 +12,13 @@ const nav = [
 ];
 
 export const TheNavigation: FC = () => {
+  const navBox = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.from(navBox.current, { y: -100 });
+  });
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} ref={navBox}>
       <Container className={styles.container}>
         <Logo />
         <div className={styles.nav__wrapper}>

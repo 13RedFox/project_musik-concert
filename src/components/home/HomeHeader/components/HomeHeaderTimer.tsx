@@ -1,4 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
+import gsap from 'gsap';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { Container } from '../../../common';
 import styles from './HomeHeaderTimer.module.scss';
 
@@ -7,6 +8,8 @@ export const HomeHeaderTimer: FC = () => {
   const [timerHours, setTimerHours] = useState('00');
   const [timerMinutes, setTimerMinutes] = useState('00');
   const [timerSeconds, setTimerSeconds] = useState('00');
+
+  const timerBox = useRef<HTMLDivElement>(null);
 
   let interval: NodeJS.Timer;
 
@@ -42,8 +45,14 @@ export const HomeHeaderTimer: FC = () => {
     };
   });
 
+  useEffect(() => {
+    let tl = gsap.timeline();
+
+    tl.from(timerBox.current, { opacity: 0, y: 40 }, 1.2);
+  }, [timerBox]);
+
   return (
-    <div className={styles.timer}>
+    <div className={styles.timer} ref={timerBox}>
       <Container className={styles.container}>
         <span>{timerDays}d</span>
         <span>{timerHours}h</span>
