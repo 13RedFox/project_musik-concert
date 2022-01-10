@@ -1,0 +1,84 @@
+@import 'core';
+
+.contact_us {
+  position: relative;
+  // background-color: $BLUE;
+  background: rgba(34, 34, 34, 0.03);
+  padding: 103px 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 48%;
+    background-color: $BLUE;
+    height: 100%;
+    z-index: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    z-index: 1;
+    &_title {
+      @include text(rem(34px), 700, $WHITE);
+      line-height: 130%;
+      margin-bottom: 8px;
+    }
+    &_description {
+      font-family: $SECOND_FONT;
+      @include text(rem(24px), 400, $WHITE);
+      line-height: 158%;
+      opacity: 0.8;
+      margin-bottom: 80px;
+    }
+    &_info {
+      flex-direction: column;
+      display: flex;
+      &__link {
+        width: fit-content;
+        @include text(rem(16px), 700, $WHITE);
+        line-height: 125%;
+        @include flex(flex-start, center);
+        margin-bottom: 40px;
+        @include transition(color);
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:hover {
+          color: $LIGHT_RED;
+        }
+        .icon {
+          @include size(24px);
+          fill: $LIGHT_RED;
+          margin-right: 11px;
+        }
+      }
+    }
+  }
+  &__right {
+    flex-direction: column;
+    &__title {
+      @include text(rem(24px), 800, $BLACK);
+      line-height: 158%;
+      margin-bottom: 40px;
+    }
+    &__form {
+      width: 570px;
+      .label {
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        .input {
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid $A1;
+          outline: none;
+          &:focus {
+            border-bottom-color: $BLUE;
+          }
+        }
+      }
+    }
+  }
+}
