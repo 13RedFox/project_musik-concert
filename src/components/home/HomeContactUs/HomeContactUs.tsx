@@ -29,19 +29,26 @@ export const HomeContactUs: FC = () => {
         <div className={styles.contact_us__right}>
           <h2 className={styles.contact_us__right__title}>Fill in your details</h2>
           <form className={styles.contact_us__right__form}>
-            <label className={styles.label} htmlFor="">
-              Name:
-              <input className={styles.input} type="text" />
-            </label>
-            <label className={styles.label} htmlFor="">
-              Email:
-              <input className={styles.input} type="text" />
-            </label>
-            <label className={styles.label} htmlFor="">
-              Message
-              <input className={styles.input} type="text" />
-            </label>
-            <input type="submit" value="Submit" />
+            <div className={styles.form__wrapper}>
+              <label className={styles.form__wrapper_label} htmlFor="">
+                Name
+              </label>
+              <input className={styles.form__wrapper_input} type="text" />
+            </div>
+            <div className={styles.form__wrapper}>
+              <label className={styles.form__wrapper_label} htmlFor="">
+                Email
+              </label>
+              <input className={styles.form__wrapper_input} type="text" />
+            </div>
+            <div className={styles.form__wrapper}>
+              <label className={styles.form__wrapper_label} htmlFor="">
+                Message
+              </label>
+              <textarea className={styles.form__wrapper_input} rows={4}></textarea>
+            </div>
+
+            <input className={styles.contact_us__right__form_submit} type="submit" value="Submit" />
           </form>
         </div>
       </Container>

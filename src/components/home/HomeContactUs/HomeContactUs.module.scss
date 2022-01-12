@@ -65,19 +65,54 @@
     }
     &__form {
       width: 570px;
-      .label {
-        width: 100%;
+      .form__wrapper {
         flex-direction: column;
         display: flex;
-        .input {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 40px;
+        }
+        &_label {
+          font-family: $SECOND_FONT;
+          @include text(rem(12px), 600, $DARK);
+          line-height: 150%;
+          opacity: 0.7;
+        }
+        &_label > &_input:focus {
+          color: red;
+        }
+        &_input {
+          font-family: $SECOND_FONT;
+          @include text(rem(16px), 400, $DARK);
+          line-height: 150%;
           background-color: transparent;
           border: none;
           border-bottom: 1px solid $A1;
+          padding: 4px 0 8px;
           outline: none;
           &:focus {
             border-bottom-color: $BLUE;
           }
         }
+      }
+      &_submit {
+        width: 100%;
+        @include text(rem(16px), 700, $WHITE);
+        line-height: 125%;
+        background-color: $BLUE;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        padding: 18px 0;
+        cursor: pointer;
+        @include transition(background-color, border-color, color);
+        &:hover {
+          background-color: transparent;
+          border-color: $BLUE;
+          color: $BLUE;
+        }
+      }
+      textarea {
+        resize: none;
       }
     }
   }
