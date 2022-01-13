@@ -1,8 +1,26 @@
 import { FC } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { Container, Icon } from '../../common';
 import styles from './HomeContactUs.module.scss';
 
+interface IFormInput {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export const HomeContactUs: FC = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<IFormInput>();
+  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+    console.log(data);
+    reset();
+  };
+
   return (
     <section className={styles.contact_us}>
       <Container className={styles.container}>
@@ -28,24 +46,42 @@ export const HomeContactUs: FC = () => {
         </div>
         <div className={styles.contact_us__right}>
           <h2 className={styles.contact_us__right__title}>Fill in your details</h2>
-          <form className={styles.contact_us__right__form}>
+          <form className={styles.contact_us__right__form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.form__wrapper}>
               <label className={styles.form__wrapper_label} htmlFor="">
                 Name
               </label>
-              <input className={styles.form__wrapper_input} type="text" />
+              <input
+                className={styles.form__wrapper_input}
+                type="text"
+                {...register('name', { required: true, minLength: 3, maxLength: 20 })}
+              />
+              {errors.name && <span className={styles.errors}>Name is required</span>}
             </div>
             <div className={styles.form__wrapper}>
               <label className={styles.form__wrapper_label} htmlFor="">
                 Email
               </label>
-              <input className={styles.form__wrapper_input} type="text" />
+              <input
+                className={styles.form__wrapper_input}
+                type="text"
+                {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+              />
+              {errors.email && <span className={styles.errors}>Email is required</span>}
             </div>
             <div className={styles.form__wrapper}>
               <label className={styles.form__wrapper_label} htmlFor="">
                 Message
               </label>
-              <textarea className={styles.form__wrapper_input} rows={4}></textarea>
+              <textarea
+                className={styles.form__wrapper_input}
+                rows={4}
+                {...register('message', {
+                  required: true,
+                  minLength: 3,
+                  maxLength: 80,
+                })}></textarea>
+              {errors.message && <span className={styles.errors}>Message is required</span>}
             </div>
 
             <input className={styles.contact_us__right__form_submit} type="submit" value="Submit" />

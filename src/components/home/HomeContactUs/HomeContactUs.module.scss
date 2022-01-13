@@ -114,6 +114,10 @@
       textarea {
         resize: none;
       }
+      .errors {
+        color: $LIGHT_RED;
+        margin-top: 10px;
+      }
     }
   }
 }
